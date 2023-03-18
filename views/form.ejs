@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Formulario</title>
+      <link rel="stylesheet" href="/public/stylesheets/style.css">
+    </head>
+    <body>
+      <h1>Formulario</h1>
+      
+      <form method="post" action="/formulario">
+        <div>
+          <label for="nombre">Ingrese su nombre:</label>
+          <input type="text"  name="name">
+        </div>
+        <div>
+          <label for="color">Seleccione un color:</label>
+          <select id="color" name="color">
+            <option value="">Seleccione un color</option>
+            <option value="rojo" name="red">Rojo</option>
+            <option value="verde"  name="green">Verde</option>
+            <option value="azul"  name="blue">Azul</option>
+          </select>
+        </div>
+        <div>
+          <label for="email">Ingrese su email:</label>
+          <input type="email"  name="email">
+        </div>
+        <div>
+          <label for="edad">Ingrese su edad:</label>
+          <input type="number"  name="age">
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+
+      <% if (locals.errors) { %>
+        <div style="color: red">
+          <ul>
+            <% errors.forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        </div>
+     <% } %>
+
+ 
+    </body>
+    </html>
